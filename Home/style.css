@@ -346,6 +346,8 @@ h1.help {
 }
 
 @media (max-width: 700px) {
+
+ 
   .card {
     width: 200px;
   }
@@ -364,3 +366,19 @@ h1.help {
   }
 }
 
+@media (max-width:500px) {
+
+  h1.help 
+  {
+     text-align: center;
+     margin-bottom: 2rem;
+  }
+  .how_to_help 
+  {
+    display: grid;
+    margin: auto;
+    grid-template-columns:1fr;
+    margin-bottom: 3rem;
+  }
+  
+}
