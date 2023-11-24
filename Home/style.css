@@ -4,40 +4,94 @@
   margin: 0;
 }
 
+input:focus 
+{
+  outline: none;
+}
+html {
+  overflow-x: hidden;
+}
 body {
-
-    position: relative;
+  position: relative;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
   overflow-y: scroll;
-
+  overflow-x: hidden;
 }
 
-.modal 
-{
-    position: absolute;
-    height: 100vh;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.95);
-    z-index: 3;
-    display: grid;
-    align-items: center;
-    align-content: center;
-    justify-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-
+/* Modal */
+.modal {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 1;
+  display: none;
+  align-items: center;
+  justify-items: center;
 }
 
-
-.modal h1 
-{
-    color: white;
+.modal section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
+  border-bottom: 1px solid #ccc;
 }
+
+.modal .modal_img img {
+  width: 40px;
+  height: 40px;
+  object-fit: fill;
+}
+.modal .modal_close h3 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: red;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.modal_wrapper {
+  width: 400px;
+  border-radius: 1rem;
+  background: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.modal_content {
+  margin-top: 2rem;
+}
+
+.modal_content p {
+  padding: 0 1rem;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.modal_content button {
+  display: grid;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 2rem;
+  background-color: #0076ce;
+  color: #f7f7f7;
+  cursor: pointer;
+  border: none;
+  border-radius: 0 0 1rem 1rem;
+}
+
+@media (max-width: 700px) {
+  .modal_wrapper {
+    width: 80%;
+  }
+
+  .modal_content p {
+    font-size: 1.2rem;
+  }
+}
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -64,7 +118,7 @@ header {
 }
 
 header button {
-  padding:  1rem;
+  padding: 1rem;
   border: none;
   color: white;
   background: #0076ce;
@@ -241,7 +295,6 @@ main.boxes .box2 {
 
   main.boxes .box1 {
     padding: 1rem;
-   
   }
 
   main.boxes .box1,
@@ -275,7 +328,7 @@ h1.help {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   gap: 2rem;
 }
 
@@ -329,39 +382,32 @@ h1.help {
   .how_to_help {
     width: 100%;
     margin: auto;
+    margin-bottom: 3rem;
     padding: 0;
     display: grid;
     box-shadow: none;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-  
   }
   h1.help {
-  
     width: 100%;
     margin-left: 2rem;
     margin-bottom: 2rem;
-   
   }
 }
 
 @media (max-width: 700px) {
-
-  h1.help 
-  {
-     text-align: center;
-     font-size: 1rem;
-     padding-left: 0;
-     margin-bottom: 2rem;
-     margin-left: 0;
-     border-left: 0;
+  h1.help {
+    text-align: center;
+    font-size: 1rem;
+    padding-left: 0;
+    margin-bottom: 2rem;
+    margin-left: 0;
+    border-left: 0;
   }
-  .how_to_help 
-  {
+  .how_to_help {
     display: grid;
-    margin: auto;
-    grid-template-columns:1fr;
-    margin-bottom: 3rem;
+    grid-template-columns: 1fr;
   }
   .card {
     width: 200px;
@@ -381,3 +427,102 @@ h1.help {
   }
 }
 
+/* Form */
+
+form {
+  background: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  padding: 1rem;
+  display: grid;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  justify-items: center;
+  column-gap: 1rem;
+}
+
+form label {
+  font-weight: bold;
+  color: #0076ce;
+}
+form .banking,
+.whatsapp,
+.ewallet {
+  background-color: white;
+  padding: 1rem;
+  width: 300px;
+}
+
+.ewallet h3 
+{
+  color:#0076ce;
+}
+.ewallet p 
+{
+  font-weight: bold;
+  color: #333;
+}
+
+.bank_logo {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.bank_logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+form .banking p {
+  font-weight: bold;
+  color: #333;
+}
+.whatsapp {
+  margin-top: 1rem;
+}
+
+.whatsapp input {
+  width: 100%;
+  border: none;
+  display: grid;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  margin-top: 1rem;
+}
+
+.whatsapp button {
+  position: relative;
+  background-color:#002D62;
+  text-align: center;
+  color: #f7f7f7;
+  width: 100%;
+  border: none;
+  padding: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+
+
+/* Media */
+@media (max-width: 1000px) {
+  form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  form {
+    padding: 2rem;
+  }
+  form .banking,
+  .whatsapp,
+  .ewallet {
+    width: 100%;
+  }
+}

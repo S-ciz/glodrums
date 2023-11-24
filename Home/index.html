@@ -9,19 +9,33 @@
 </head>
 <body>
     <!-- Modal -->
-    <!-- <div class="modal"> 
-         <h1>Modal test</h1>
-    </div> -->
+    <div class="modal"> 
+        <div class="modal_wrapper">
+            <section> 
+            <div class="modal_img"> 
+                <img loading="lazy" alt="logo" src="./images/logo.jpg"/>
+            </div>
+            <div class="modal_close"> <h3 onclick="toggleModal()">X</h3> </div>
+        </section>
+               <div class="modal_content">
+                  <p id="modal_text" > modal </p>
+                    <button>Donate</button>
+               </div>
+        </div>
+    </div>
+
+    <!--header -->
     <header>
         <div class="logo">  
             <img loading="lazy" alt="logo" src="./images/logo.jpg"/>
         </div>
         <div class="link"> 
-            <li> <a href="index.html"> 065 383 8052</a> </li>
+            <li> <a href="#form"> 065 383 8052</a> </li>
             <button> Donate now </button>
         </div>
     </header>
 
+    <!--showcase-->
     <section class="showcase">
         
         <div class="showcase_wrapper"> 
@@ -33,6 +47,7 @@
          </div>
     </section>
 
+    <!--Introduction-->
     <section class="introduction">
         <div class="intro_image"> 
           
@@ -45,6 +60,7 @@
         </div>
     </section>
 
+    <!--boxes-->
     <main class="boxes">
         <section class="box1"> 
         <h3>The Initiative:</h3>
@@ -58,9 +74,46 @@
         </section>
     </main>
 
+    <!--help-->
     <h1 class="help">How to help?</h1>
     <main class="how_to_help"> <!--Cards will go here--></main>
-    
+   
+        <!--form-->
+    <form id="form" class="form"> 
+     <div class="banking"> 
+        <div class="bank_logo">
+            <img alt="fnb" loading="lazy" src="images/fnb.png"/>
+        </div>
+       <label>REFERENCE:</label>
+       <p> MISS MATLALA RAMONOANA</p>
+       <label>FNB CURRENT ACCOUNT:</label>
+       <p> 63058524943</p>
+     </div>
+     <div class="ewallet"> 
+        <div class="bank_logo">
+            <img alt="ewallet" loading="lazy" src="images/money.png"/>
+            <h3>eWallet</h3>
+            <p>065 383 8052 </p>
+        </div>
+     </div>
+     <div class="whatsapp"> 
+        <div class="bank_logo">
+            <img alt="whatsapp" loading="lazy" src="images/whatsapp.png"/>
+        </div>
+           
+        <input id="whatsapp" placeholder="Enter a Whatsapp message.."/>
+        <button> 
+           Send a whatsapp message right now
+        </button>
+
+     </div>
+    </form>
+
+
     <script type="module" src="./main.js"></script> 
+    <script>
+         //hide modal
+        function toggleModal(){document.querySelector("div.modal").style.display = "none"}
+    </script>
 </body>
 </html>
