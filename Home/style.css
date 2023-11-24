@@ -4,6 +4,7 @@
   margin: 0;
 }
 
+<<<<<<< HEAD
 input:focus 
 {
   outline: none;
@@ -11,10 +12,17 @@ input:focus
 html {
   overflow-x: hidden;
 }
+=======
+html{
+overflow-x: hidden;
+}
+
+>>>>>>> 9c61d670949e5c4e370dc3d1811bedab2c36aa08
 body {
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
+  overflow-x: hidden;
   overflow-y: scroll;
   overflow-x: hidden;
 }

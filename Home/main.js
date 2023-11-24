@@ -25,7 +25,7 @@ function displayCards() {
 
 function loadContent() {
   //load cards
-   displayCards();
+  displayCards();
   //load functions
   const card_btns_arr = document.querySelectorAll("button#card_btn");
   card_btns_arr.forEach((btn) => {
@@ -36,30 +36,22 @@ function loadContent() {
 
 window.addEventListener("DOMContentLoaded", loadContent);
 
-
 //form
 
-const form = document.querySelector('form')
-const input = document.querySelector("input#whatsapp")
+const form = document.querySelector("form");
+const input = document.querySelector("input#whatsapp");
 
-
-form.addEventListener('submit', (e)=>{
+form.addEventListener("submit", (e) => {
   e.preventDefault();
- 
-  const cellnumber = "653838052"
-  if(input.value.trim() !== ''  )
-  {
-     window.location.href =  `https://wa.me/+27${cellnumber}?text=${input.value}`
-  }
-  else 
-  {  
+
+  const cellnumber = "653838052";
+  if (input.value.trim() !== "") {
+    window.location.href = `https://wa.me/+27${cellnumber}?text=${input.value}`;
+  } else {
     //alert fields
-    window.alert("Please Enter message!!!!")
+    window.alert("Please Enter message!!!!");
   }
 
   //clear fields
-  input.value = ''
-
-})
-
-console.log(window.alert)
+  input.value = "";
+});
